@@ -1,3 +1,5 @@
+using ComicStoreApi.Core;
+
 namespace ComicStoreApi.Domain
 {
     public class User : BaseEntity
