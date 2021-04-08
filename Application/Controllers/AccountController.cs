@@ -5,10 +5,10 @@ using ComicStoreApi.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ComicStoreApi.Application.Controllers.V1
+namespace ComicStoreApi.Application.Controllers
 {
     [Route("v1/account")]
-    public class HomeController : ControllerBase
+    public class AccountController : ControllerBase
     {
         [HttpPost]
         [Route("login")]
