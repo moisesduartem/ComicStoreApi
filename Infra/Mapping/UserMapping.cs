@@ -1,4 +1,4 @@
-using ComicStoreApi.Domain;
+using ComicStoreApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

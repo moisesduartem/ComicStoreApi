@@ -1,4 +1,4 @@
-namespace ComicStoreApi.Domain
+namespace ComicStoreApi.Models
 {
     public class UserComic
     {

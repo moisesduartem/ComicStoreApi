@@ -1,4 +1,4 @@
-using ComicStoreApi.Domain;
+using ComicStoreApi.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ComicStoreApi.Infra.Context

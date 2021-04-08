@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ComicStoreApi.Application.Interfaces;
-using ComicStoreApi.Domain;
+using ComicStoreApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComicStoreApi.Application.Controllers

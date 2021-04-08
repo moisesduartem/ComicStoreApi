@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ComicStoreApi.Domain;
+using ComicStoreApi.Models;
 
 namespace ComicStoreApi.Application.Interfaces
 {
