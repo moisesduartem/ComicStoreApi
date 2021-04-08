@@ -10,7 +10,7 @@ namespace ComicStoreApi.Infra.Mapping
         {
             builder.ToTable("User");
             builder.HasKey(entity => entity.Id);
-            builder.Property(entity => entity.Nome);
+            builder.Property(entity => entity.Name);
             builder.Property(entity => entity.Username);
             builder.Property(entity => entity.Email);
             builder.Property(entity => entity.Password);
