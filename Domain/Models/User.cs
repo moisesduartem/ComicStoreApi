@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 using ComicStoreApi.Core;
 
 namespace ComicStoreApi.Domain.Models
@@ -15,6 +17,8 @@ namespace ComicStoreApi.Domain.Models
 
         public string Password { get; set; }
 
+        [JsonIgnore]
+        [IgnoreDataMember]
         public ICollection<UserPurchase> PurchasedItems { get; set; } = new List<UserPurchase>();
     }
 }

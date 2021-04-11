@@ -31,9 +31,10 @@ namespace ComicStoreApi.Application.Controllers
                 model.CreatedAt = DateTime.UtcNow;
 
                 var purchase = _purchaseService.Register(model);
-                
+
                 return Ok(
-                    new {
+                    new
+                    {
                         purchase = purchase,
                     }
                 );
@@ -47,6 +48,26 @@ namespace ComicStoreApi.Application.Controllers
                     }
                 );
             }
+        }
+
+        [HttpGet]
+        public ActionResult<dynamic> GetAllLoggedUserPurchases()
+        {
+            try
+            {
+                var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                var purchases = _purchaseService.GetPurchasesByUserId(userId);
+                return Ok(
+                    new {
+                        purchases = purchases 
+                    }
+                );
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
         }
 
     }

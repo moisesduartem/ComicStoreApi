@@ -1,7 +1,9 @@
+using System.Collections.Generic;
 using System.Linq;
 using ComicStoreApi.Domain.Interfaces;
 using ComicStoreApi.Domain.Models;
 using ComicStoreApi.Infra.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace ComicStoreApi.Domain.Repositories
 {
@@ -14,12 +16,16 @@ namespace ComicStoreApi.Domain.Repositories
             _context = context;
         }
 
+        public List<UserPurchase> GetAllByUserId(int userId)
+        {
+            var purchases = _context.UsersPurchases.Where(p => p.UserId == userId).ToList();
+            return purchases;
+        }
+
         public UserPurchase Register(UserPurchase purchase)
         {
             _context.UsersPurchases.Add(purchase);
             _context.SaveChanges();
-
-            purchase.User = _context.Users.FirstOrDefault(u => u.Id == purchase.UserId);
 
             return purchase;
         }
