@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ComicStoreApi.Models;
+using ComicStoreApi.Domain.Models;
 
-namespace ComicStoreApi.Application.Services
+namespace ComicStoreApi.Application.Interfaces
 {
     public interface IUserService
     {

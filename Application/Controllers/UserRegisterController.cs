@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using ComicStoreApi.Application.Services;
+using ComicStoreApi.Application.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

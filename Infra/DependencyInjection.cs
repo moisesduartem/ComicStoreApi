@@ -1,5 +1,7 @@
+using ComicStoreApi.Application.Interfaces;
 using ComicStoreApi.Application.Services;
-using ComicStoreApi.Repositories;
+using ComicStoreApi.Domain.Interfaces;
+using ComicStoreApi.Domain.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ComicStoreApi.Infra

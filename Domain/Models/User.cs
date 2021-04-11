@@ -1,9 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using ComicStoreApi.Core;
 
-namespace ComicStoreApi.Models
+namespace ComicStoreApi.Domain.Models
 {
     public class User : BaseEntity
     {

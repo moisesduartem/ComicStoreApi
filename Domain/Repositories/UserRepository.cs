@@ -1,10 +1,10 @@
 using System.Linq;
-using System.Threading.Tasks;
+using ComicStoreApi.Domain.Interfaces;
+using ComicStoreApi.Domain.Models;
 using ComicStoreApi.Infra.Context;
-using ComicStoreApi.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ComicStoreApi.Repositories
+namespace ComicStoreApi.Domain.Repositories
 {
     public class UserRepository : IUserRepository
     {

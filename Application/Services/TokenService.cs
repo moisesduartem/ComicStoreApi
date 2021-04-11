@@ -1,9 +1,9 @@
 using System;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
-using ComicStoreApi.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
+using ComicStoreApi.Domain.Models;
 
 namespace ComicStoreApi.Application.Services
 {

@@ -1,9 +1,10 @@
 using System.Security.Claims;
 using System;
 using ComicStoreApi.Application.Services;
-using ComicStoreApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ComicStoreApi.Domain.Models;
+using ComicStoreApi.Application.Interfaces;
 
 namespace ComicStoreApi.Application.Controllers
 {

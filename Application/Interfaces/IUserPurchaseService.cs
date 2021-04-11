@@ -1,7 +1,7 @@
-using ComicStoreApi.Models;
+using ComicStoreApi.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ComicStoreApi.Application.Services
+namespace ComicStoreApi.Application.Interfaces
 {
     public interface IUserPurchaseService
     {

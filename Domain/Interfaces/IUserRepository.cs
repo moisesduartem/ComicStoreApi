@@ -1,6 +1,6 @@
-using ComicStoreApi.Models;
+using ComicStoreApi.Domain.Models;
 
-namespace ComicStoreApi.Repositories
+namespace ComicStoreApi.Domain.Interfaces
 {
     public interface IUserRepository
     {

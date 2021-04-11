@@ -1,6 +1,7 @@
 using System;
+using ComicStoreApi.Application.Interfaces;
 using ComicStoreApi.Application.Services;
-using ComicStoreApi.Models;
+using ComicStoreApi.Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
