@@ -1,12 +1,14 @@
 using System;
 using System.Threading.Tasks;
 using ComicStoreApi.Application.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComicStoreApi.Application.Controllers
 {
     [Route("api/v1/users")]
     [ApiController]
+    [Authorize]
 
     public class UserRegisterController : ControllerBase
     {
