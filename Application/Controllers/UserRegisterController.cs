@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ComicStoreApi.Application.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/users")]
     [ApiController]
 
     public class UserRegisterController : ControllerBase
