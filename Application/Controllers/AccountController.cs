@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ComicStoreApi.Application.Controllers
 {
+    [ApiController]
     [Route("api/v1/account")]
     public class AccountController : ControllerBase
     {

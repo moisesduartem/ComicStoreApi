@@ -9,7 +9,6 @@ namespace ComicStoreApi.Application.Controllers
     [Route("api/v1/users")]
     [ApiController]
     [Authorize]
-
     public class UserRegisterController : ControllerBase
     {
         private readonly IUserService _userService;

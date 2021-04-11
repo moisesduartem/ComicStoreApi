@@ -1,8 +1,8 @@
 using BC = BCrypt.Net.BCrypt;
 using System;
-using ComicStoreApi.Models;
 using ComicStoreApi.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using ComicStoreApi.Models;
 
 namespace ComicStoreApi.Application.Services
 {

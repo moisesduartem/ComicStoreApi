@@ -14,7 +14,7 @@ CREATE TABLE [UserPurchase] (
 	[UserId] INT NOT NULL,
 	[ComicId] INT NOT NULL,
 	[Price] DECIMAL(5,2) NOT NULL,
-	[PurchasedAt] TIMESTAMP NOT NULL
+	[CreatedAt] DATETIME NOT NULL
 );
 
 GO
