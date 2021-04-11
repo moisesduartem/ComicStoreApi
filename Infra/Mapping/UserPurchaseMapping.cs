@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace ComicStoreApi.Infra.Mapping
 {
-    public class UserComicMapping : IEntityTypeConfiguration<UserComic>
+    public class UserPurchaseMapping : IEntityTypeConfiguration<UserPurchase>
     {
-        public void Configure(EntityTypeBuilder<UserComic> builder)
+        public void Configure(EntityTypeBuilder<UserPurchase> builder)
         {
-            builder.ToTable("UserComic");
+            builder.ToTable("UserPurchase");
             builder.HasKey(entity => new { entity.ComicId, entity.UserId });
             builder.Property(entity => entity.ComicId);   
             builder.HasOne(user => user.User)
-                .WithMany(comics => comics.UsersComics)
+                .WithMany(purchase => purchase.PurchasedItems)
                 .HasForeignKey(entity => entity.ComicId)
                 .OnDelete(DeleteBehavior.NoAction);
         }

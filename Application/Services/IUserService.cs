@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using ComicStoreApi.Models;
 
-namespace ComicStoreApi.Application.Interfaces
+namespace ComicStoreApi.Application.Services
 {
     public interface IUserService
     {

@@ -1,8 +1,6 @@
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using ComicStoreApi.Application.Interfaces;
-using ComicStoreApi.Models;
+using ComicStoreApi.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComicStoreApi.Application.Controllers

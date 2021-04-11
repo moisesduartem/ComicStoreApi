@@ -34,7 +34,7 @@ namespace ComicStoreApi
 
             services.AddCors();
 
-            services.AddControllers().AddControllersAsServices();
+            services.AddControllers().AddControllersAsServices().AddNewtonsoftJson();
 
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
 

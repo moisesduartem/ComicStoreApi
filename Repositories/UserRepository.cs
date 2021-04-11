@@ -1,22 +1,31 @@
-using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using ComicStoreApi.Infra.Context;
 using ComicStoreApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ComicStoreApi.Repositories
 {
-    public class UserRepository
+    public class UserRepository : IUserRepository
     {
-        public static User Get(string username, string password)
-        {
-            var users = new List<User>();
-            
-            users.Add(new User { Id = 1, Username = "batman", Password = "batman" });
-            users.Add(new User { Id = 2, Username = "robin", Password = "robin" });
+        private readonly ApplicationContext _context;
 
-            return users.Where(x => 
-                x.Username.ToLower() == username.ToLower()
-                && x.Password == password
-            ).First();
-        } 
+        public UserRepository(ApplicationContext context)
+        {
+            _context = context;
+        }
+
+        public void Register(User user)
+        {
+            _context.Users.Add(user);
+            _context.SaveChanges();
+        }
+
+        public User GetByEmail(string email)
+        {
+            return _context.Users.AsNoTracking().FirstOrDefault(x =>
+                x.Email.ToLower() == email.ToLower()
+            );
+        }
     }
 }

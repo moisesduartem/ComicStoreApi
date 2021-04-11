@@ -11,10 +11,10 @@ namespace ComicStoreApi.Infra.Mapping
             builder.ToTable("User");
             builder.HasKey(entity => entity.Id);
             builder.Property(entity => entity.Name);
-            builder.Property(entity => entity.Username);
-            builder.Property(entity => entity.Email);
+            builder.HasIndex(entity => entity.Username).IsUnique();
+            builder.HasIndex(entity => entity.Email).IsUnique();
             builder.Property(entity => entity.Password);
-            builder.HasMany(user => user.UsersComics)
+            builder.HasMany(user => user.PurchasedItems)
                    .WithOne(comic => comic.User)
                    .HasForeignKey(entity => entity.UserId);
         }

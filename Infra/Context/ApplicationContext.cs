@@ -6,7 +6,7 @@ namespace ComicStoreApi.Infra.Context
     public class ApplicationContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<UserComic> UsersComics { get; set; }
+        public DbSet<UserPurchase> UsersPurchases { get; set; }
 
         public ApplicationContext(DbContextOptions options) : base(options)
         {

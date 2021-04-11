@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ComicStoreApi.Application.Interfaces;
 using ComicStoreApi.Models;
 using ComicStoreApi.Infra.Context;
 using Microsoft.EntityFrameworkCore;

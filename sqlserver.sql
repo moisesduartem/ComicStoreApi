@@ -1,0 +1,35 @@
+-- SQL SERVER QUERIES FOR DATABASE FIRST
+
+CREATE TABLE [User] (
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	[Name] NVARCHAR(150) NOT NULL,
+	[Username] NVARCHAR(100) UNIQUE NOT NULL,
+	[Email] NVARCHAR(200) UNIQUE NOT NULL,
+	[Password] NVARCHAR(255) NOT NULL
+);
+
+GO
+
+CREATE TABLE [UserPurchase] (
+	[UserId] INT NOT NULL,
+	[ComicId] INT NOT NULL,
+	[Price] DECIMAL(5,2) NOT NULL,
+	[PurchasedAt] TIMESTAMP NOT NULL
+);
+
+GO
+
+ALTER TABLE [dbo].[UserPurchase]  WITH CHECK ADD FOREIGN KEY([UserId])
+REFERENCES [dbo].[User] ([Id])
+
+-- GO
+
+-- CREATE TABLE [UserComicCart] (
+--	[UserId] INT NOT NULL,
+--	[ComicId] INT NOT NULL
+--);
+
+--GO
+
+--ALTER TABLE [dbo].[UserComicCart]  WITH CHECK ADD FOREIGN KEY([UserId])
+--REFERENCES [dbo].[User] ([Id])

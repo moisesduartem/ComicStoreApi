@@ -1,7 +1,6 @@
-using System.Threading.Tasks;
+using System;
 using ComicStoreApi.Application.Services;
 using ComicStoreApi.Models;
-using ComicStoreApi.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,25 +9,64 @@ namespace ComicStoreApi.Application.Controllers
     [Route("v1/account")]
     public class AccountController : ControllerBase
     {
-        [HttpPost]
-        [Route("login")]
-        [AllowAnonymous]
-        public async Task<ActionResult<dynamic>> Authenticate([FromBody] User model)
+        private readonly IAccountService _accountService;
+
+        public AccountController(IAccountService accountService)
         {
-            var user = UserRepository.Get(model.Username, model.Password);
+            _accountService = accountService;
+        }
 
-            if (user == null)
-                return NotFound(new { message = "Usuário e/ou senha inválidos." });
-        
-            var token = TokenService.GenerateToken(user);
-
-            user.Password = "";
-
-            return new 
+        [HttpPost]
+        [Route("login", Name = "Login")]
+        [AllowAnonymous]
+        public ActionResult<dynamic> Authenticate([FromBody] User model)
+        {
+            try
             {
-                user = user,
-                token = token
-            };
+                var user = _accountService.Authenticate(model);
+                var token = TokenService.GenerateToken(user);
+                user.Password = "";
+
+                return Ok(
+                    new
+                    {
+                        user = user,
+                        token = token
+                    }
+                );
+            }
+            catch (Exception e)
+            {
+                return NotFound(
+                    new {
+                        message = e.Message
+                    }
+                );
+            }
+        }
+
+        [HttpPost]
+        [Route("register")]
+        [AllowAnonymous]
+        public ActionResult<dynamic> Register([FromBody] User model)
+        {
+            try
+            {
+                var user = _accountService.Register(model);
+                return new CreatedAtRouteResult(
+                    "Login",
+                    new { email = model.Email, password = model.Password }
+                );
+            }
+            catch (Exception e)
+            {
+                return BadRequest(
+                    new
+                    {
+                        message = e.Message
+                    }
+                );
+            }
         }
     }
 }
